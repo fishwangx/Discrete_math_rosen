@@ -27,6 +27,40 @@ int bit_xor(unsigned int a, unsigned int b){
     return a ^ b;
 };
 
+double pow(double number, double index){
+    
+    double p = 1;
+    
+    while (index >0){
+        
+        p *= number;
+        index--;
+
+        
+    };
+    
+    return p;
+
+};
+
+int string_to_number(char a_string[], int length){
+    
+    int a = 0;
+    
+    for(int i=0;i<length; i++){
+        
+        a = a + a_string[i]* pow(2,length-i-1);
+    }
+
+    return a;
+    
+};
+string * number_to_string(int number){
+    
+    
+    
+};
+
 
 void test(){
     
@@ -34,13 +68,17 @@ void test(){
     
     printf("bitwise and or xor\n""");
     
+    printf("test pow(2,3)==8 %d", pow(2, 3)==8);
+    
     printf("%d %d %d\n",bit_and(13, 4)==4,bit_or(13, 4)==13,bit_xor(13, 4)==9);
+    
+    printf("string 1101 to number %d \n",string_to_number("1101", 4)==13);
+    printf("nunber 12 to string.%d \n", strnmp(number_to_string(12),"1100")==1);
+    
     
     
 };
 
-int string_to_number(char[], int length);
-char * number_to_string(int number);
 
 int main(int argc, const char * argv[]) {
     // insert code here...
